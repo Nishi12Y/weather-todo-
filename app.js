@@ -26,6 +26,7 @@ addButton.addEventListener("click", clickAddButton);
 
 const taskList = document.getElementById("task-list");
 
+// タスクリスト
 let inputTaskList = [];
 
 // リストにタスクを加える関数
@@ -66,6 +67,22 @@ const description = document.getElementById("weather-description")
 const temp = document.getElementById("weather-temp")
 const humidity = document.getElementById("weather-humidity")
 const icon = document.getElementById("weather-icon")
+
+// 検索エリア
+const taskSearchArea = document.getElementById("task-search")
+
+taskSearchArea.addEventListener("input",searchTask)
+
+function searchTask(event){
+    const filterTask = inputTaskList.filter((task)=>task.indexOf(event.target.value)>-1)
+    clearTaskArea()
+    filterTask.forEach(task => {
+        addTask(task)})
+}
+
+function clearTaskArea(){
+    taskList.innerHTML = "";
+}
 
 window.onload =  function () {
     console.log("開始")
