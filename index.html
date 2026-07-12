@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お天気タスク管理</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 天気表示エリア -->
+    <div id="weather">
+        <h2 id="weather-city">---</h2>
+        <img id="weather-icon" src="" alt="">
+        <p id="weather-description">---</p>
+        <p id="weather-temp">--°C</p>
+        <p id="weather-humidity">湿度: --%</p>
+    </div>
+
+    <!-- タスク入力エリア + タスク一覧をカードでまとめる -->
+    <div id="task-card">
+        <p id="task-card-title">今日のタスク</p>
+
+        <!-- タスク入力エリア -->
+        <div id="task-form">
+            <input type="text" id="task-input" placeholder="タスクを入力してください">
+            <button id="task-add-btn">追加</button>
+        </div>
+
+        <!-- 区切り線 -->
+        <hr class="task-divider">
+
+        <!-- タスク一覧エリア -->
+        <ul id="task-list"></ul>
+    </div>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
